@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Valdez - Leilão de Arte</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .auction-item {
+            background-color: #6d3485;
+            color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .auction-item h5 {
+            font-weight: bold;
+        }
+
+        .btn-auction {
+            background-color: #ffffff;
+            color: #6d3485;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-auction:hover {
+            background-color: #6d3485;
+            color: #ffffff;
+        }
+        p {
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#"><img src="logo2.png" width="40"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><p>Início</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hist.html"><p>Sobre nós</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><p>Compras</p></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="leilao.html"><p>Leilão</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="eventos.html"><p>Eventos</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><p>Plano vip</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html"><p>Login</p></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Leilão Section -->
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="auction-item">
+                    <h5>Arte Contemporânea</h5>
+                    <p>Lance inicial: R$ 100,00</p>
+                    <a href="lance.html" class="btn btn-auction">Dar Lance</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="auction-item">
+                    <h5>Escultura Clássica</h5>
+                    <p>Lance inicial: R$ 200,00</p>
+                    <a href="lance.html" class="btn btn-auction">Dar Lance</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
