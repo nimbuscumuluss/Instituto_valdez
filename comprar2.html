@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra do Produto - Instituto Valdez</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            padding-top: 30px;
+            width: 100%;
+        }
+
+        .navbar .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .product-container {
+            background-color: #1f1f1f;
+            padding: 30px 0;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ffffff;
+            cursor: zoom-in;
+        }
+
+        .product-info {
+            padding: 30px;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 20px;
+            color: #4c58e0;
+            margin-top: 10px;
+        }
+
+        .btn-custom {
+            background-color: #6d3485;
+            color: #ffffff;
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #4c2863;
+            color: #ffffff;
+        }
+
+        .product-description {
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #6d3485cd;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+
+    <!-- Página de Compra do Produto -->
+    <div class="container product-container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="zoom-container">
+                    <img src="a3.png" class="product-image" id="productImage" alt="Produto" width="700">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-info">
+                    <h2 class="product-title">Montanha</h2>
+                    <p class="product-price">R$ 499,99</p>
+                    <div class="product-description">
+                        <h4>Descrição</h4>
+                        <p> Tamanho: 80 x 60 cm
+                            <br>
+                            Artista: Clara Monteiro
+                            <br>
+                            Descrição:
+
+                            "Montanha" é uma obra impressionante da renomada artista Clara Monteiro, que captura a majestade e a tranquilidade de uma paisagem montanhosa. Esta pintura a óleo em tela retrata uma vista panorâmica de montanhas imponentes sob um céu azul profundo e limpo, com nuvens suaves que flutuam ao longe.
+                            <br>
+
+                            Detalhes da Paisagem: As montanhas são representadas com uma riqueza de detalhes, desde as rochas ásperas até os picos nevados. A vegetação, incluindo pinheiros robustos e arbustos floridos, adiciona uma sensação de profundidade e textura ao cenário. A base das montanhas é suavemente esculpida com um lago cristalino que reflete a paisagem, criando um contraste sereno com as cores vibrantes do ambiente.
+                            <br>
+                            Impacto e Atmosfera: Esta obra é projetada para evocar uma sensação de paz e admiração. A vastidão das montanhas e a serenidade do lago refletem a grandiosidade da natureza e proporcionam um escape visual para quem a observa. É uma peça ideal para qualquer espaço que deseja incorporar um toque de tranquilidade e beleza natural.
+                        </p>
+                    </div>
+
+                    <button class="btn btn-custom btn-lg btn-block"><a href="CEP.html">Comprar Agora</a></button>
+                    <button class="btn btn-custom btn-lg btn-block mt-2">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim da Página de Compra do Produto -->
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!--zoom -->
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.0/dist/panzoom.min.js"></script>
+    <script>
+        //zoom na imagem após o carregamento do DOM
+        document.addEventListener('DOMContentLoaded', function () {
+            const image = document.getElementById('productImage');
+            const panzoom = Panzoom(image, {
+                maxScale: 5,
+                contain: 'outside'
+            });
+            image.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
