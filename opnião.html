@@ -125,11 +125,7 @@
                         <p>Eventos</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <p>Plano vip</p>
-                    </a>
-                </li>
+            
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">
                         <p>Login</p>
@@ -168,24 +164,38 @@
     <!-- JavaScript Interno -->
     <script>
         function submitFeedback() {
-            const feedback = document.getElementById('userFeedback').value;
+    // Obtém o valor do campo de entrada com o ID 'userFeedback'
+    const feedback = document.getElementById('userFeedback').value;
 
-            if (feedback.trim() === '') {
-                alert('Por favor, escreva algo antes de enviar.');
-                return;
-            }
+    // Verifica se o feedback é vazio ou contém apenas espaços em branco
+    if (feedback.trim() === '') {
+        // Exibe um alerta pedindo ao usuário para escrever algo antes de enviar
+        alert('Por favor, escreva algo antes de enviar.');
+        return; // Interrompe a execução da função se o feedback estiver vazio
+    }
 
-            const feedbackSection = document.getElementById('feedbackExamples');
+    // Seleciona a seção de feedback onde os novos feedbacks serão adicionados
+    const feedbackSection = document.getElementById('feedbackExamples');
 
-            const newFeedback = document.createElement('div');
-            newFeedback.className = 'feedback-example';
-            newFeedback.innerHTML = `<p><strong>Você:</strong> ${feedback}</p>`;
+    // Cria um novo elemento <div> para o feedback
+    const newFeedback = document.createElement('div');
+    
+    // Define a classe do novo elemento como 'feedback-example'
+    newFeedback.className = 'feedback-example';
+    
+    // Define o conteúdo HTML do novo elemento, incluindo o feedback do usuário
+    newFeedback.innerHTML = `<p><strong>Você:</strong> ${feedback}</p>`;
 
-            feedbackSection.prepend(newFeedback);
+    // Adiciona o novo feedback no início da seção de feedbacks (no topo)
+    feedbackSection.prepend(newFeedback);
 
-            document.getElementById('userFeedback').value = '';
-            alert('Obrigado pelo seu feedback!');
-        }
+    // Limpa o campo de entrada 'userFeedback' após o envio
+    document.getElementById('userFeedback').value = '';
+    
+    // Exibe um alerta agradecendo o usuário pelo feedback
+    alert('Obrigado pelo seu feedback!');
+}
+
     </script>
 
 </body>

@@ -127,7 +127,7 @@
                         </p>
                     </div>
 
-                    <button class="btn btn-custom btn-lg btn-block"><a href="CEP.html">Comprar Agora</a></button>
+                    <button class="btn btn-custom btn-lg btn-block"><a  style="text-decoration: none; color: #ffffff;" href="CEP.html">Comprar Agora</a></button>
                     <button class="btn btn-custom btn-lg btn-block mt-2">Adicionar ao Carrinho</button>
                 </div>
             </div>
@@ -147,18 +147,26 @@
     </script>
 
     <!--zoom -->
-    <script src="https://unpkg.com/@panzoom/panzoom@4.5.0/dist/panzoom.min.js"></script>
-    <script>
-        //zoom na imagem após o carregamento do DOM
-        document.addEventListener('DOMContentLoaded', function () {
-            const image = document.getElementById('productImage');
-            const panzoom = Panzoom(image, {
-                maxScale: 5,
-                contain: 'outside'
-            });
-            image.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+    <!-- Importa a biblioteca Panzoom da CDN -->
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.0/dist/panzoom.min.js"></script>
+
+<script>
+    // Aguarda até que o DOM esteja totalmente carregado antes de executar o script
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        // Seleciona a imagem com o ID 'productImage'
+        const image = document.getElementById('productImage');
+        
+        // Inicializa o Panzoom na imagem com algumas opções configuradas
+        const panzoom = Panzoom(image, {
+            maxScale: 5,        // Define o zoom máximo em 5 vezes o tamanho original
+            contain: 'outside'  // Mantém a imagem dentro dos limites ao fazer o pan (deslocamento)
         });
-    </script>
+        
+        // Adiciona um evento de zoom com a roda do mouse na imagem
+        image.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+    });
+</script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

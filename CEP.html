@@ -179,29 +179,42 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        document.getElementById('cep').addEventListener('input', function() {
-            const cep = this.value;
-            if (cep.length === 8) { // Simplificação para CEP com 8 dígitos
-                // Exemplo simples de cálculo de frete
-                const shippingCost = calcularFrete(cep);
-                document.getElementById('shipping-cost').value = `R$${shippingCost.toFixed(2)}`;
-            } else {
-                document.getElementById('shipping-cost').value = '';
-            }
-        });
+       // Adiciona um evento de escuta para o evento 'input' do campo de entrada com o ID 'cep'
+document.getElementById('cep').addEventListener('input', function() {
+    // Obtém o valor atual do campo de entrada 'cep'
+    const cep = this.value;
+    
+    // Verifica se o CEP tem exatamente 8 caracteres
+    if (cep.length === 8) { // Simplificação para CEP com 8 dígitos
+        // Calcula o custo de frete chamando a função calcularFrete com o CEP fornecido
+        const shippingCost = calcularFrete(cep);
+        
+        // Atualiza o campo de entrada 'shipping-cost' com o valor calculado do frete, formatado para duas casas decimais
+        document.getElementById('shipping-cost').value = `R$${shippingCost.toFixed(2)}`;
+    } else {
+        // Se o CEP não tiver 8 caracteres, limpa o campo de custo de frete
+        document.getElementById('shipping-cost').value = '';
+    }
+});
 
-        function calcularFrete(cep) {
-            // Simulação de cálculo de frete
-            return 20 + Math.random() * 30; // Frete entre R$20 e R$50
-        }
+// Define a função calcularFrete que simula o cálculo do custo de frete com base no CEP
+function calcularFrete(cep) {
+    // Retorna um valor de frete simulado, entre R$20 e R$50
+    return 20 + Math.random() * 30; // Frete entre R$20 e R$50
+}
 
-        document.getElementById('checkout-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio do formulário
+// Adiciona um evento de escuta para o evento 'submit' do formulário com o ID 'checkout-form'
+document.getElementById('checkout-form').addEventListener('submit', function(event) {
+    // Impede o comportamento padrão de envio do formulário
+    event.preventDefault();
+    
+    // Exibe uma mensagem de alerta simulando a finalização da compra
+    alert('Compra finalizada com sucesso!');
+    
+    // Redireciona o usuário para a página 'compras.html'
+    window.location.href = 'compras.html';
+});
 
-            // Simulação de finalização de compra
-            alert('Compra finalizada com sucesso!');
-            window.location.href = 'compras.html'; // Redireciona para a página de vendas
-        });
     </script>
 </body>
 

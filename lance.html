@@ -44,16 +44,36 @@
         <p id="result" class="mt-3"></p>
     </div>
 
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script>
+        // Adiciona um evento de escuta para o evento 'submit' do formulário com o ID 'bidForm'
         document.getElementById('bidForm').addEventListener('submit', function (event) {
+
+            // Impede o comportamento padrão do formulário, que é enviar e recarregar a página
             event.preventDefault();
+
+            // Obtém o valor inserido pelo usuário no campo de entrada com o ID 'bidAmount'
             const bidAmount = document.getElementById('bidAmount').value;
+
+            // Verifica se o valor do lance foi preenchido
             if (bidAmount) {
+                // Se o lance foi preenchido, exibe uma mensagem de confirmação no elemento com o ID 'result'
                 document.getElementById('result').textContent = `Seu lance de R$ ${bidAmount} foi registrado!`;
             } else {
+                // Se o lance não foi preenchido, exibe uma mensagem pedindo para o usuário inserir um valor válido
                 document.getElementById('result').textContent = 'Por favor, insira um valor válido.';
             }
         });
+
     </script>
 </body>
 
