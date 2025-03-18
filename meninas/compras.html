@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compras - NUVÊ</title>
     <style>
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+
         nav ul {
             list-style: none;
             display: flex;
@@ -19,24 +28,24 @@
             padding: 10px;
             background: #f4f4f4;
         }
+
         nav ul li {
             display: inline;
         }
+
         nav ul li a {
             text-decoration: none;
             color: black;
             font-weight: bold;
         }
+
         .menu {
             display: flex;
             justify-content: space-around;
             padding: 20px;
             background: #f4f4f4;
         }
-        .product img {
-            width: 100%;
-            border-radius: 10px;
-        }
+
         footer {
             background: rgb(152, 152, 152);
             color: white;
@@ -45,35 +54,35 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Início</a></li>
+                <li><a href="nuvê.html">Início</a></li>
                 <li><a href="#">Ofertas</a></li>
                 <li><a href="#">Colaboradores</a></li>
                 <li><a href="#">Sobre nós</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <h1>Produtos Disponíveis</h1>
-    
-    <section class="products">
-        <div class="product">
-            <img src="img/produto1.png">
-        </div>
-        <div class="product">
-            <img src="img/produto2.png">
-        </div>
-        <div class="product">
-            <img src="img/produto3.png">
-        </div>
-    </section>
-    
+    <div class="left">
+        <img src="img/compras 1 (1).png" width="400">
+    </div>
+
+    <img src="img/compras 1 (2).png" width="400">
+
+    <div class="right">
+        <img src="img/compra 3.png" width="400">
+    </div>
+
+
     <footer>
         <h1>A BELEZA ESTÁ EM VOCÊ</h1>
         <p>Continue comprando em outras partes :)</p>
     </footer>
 </body>
+
 </html>
